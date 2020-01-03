@@ -1,44 +1,54 @@
 {
     "name": "qunabu/silverstripe4-installer",
     "description": "The SilverStripe Framework Installer",
+    "type": "silverstripe-recipe",
     "require": {
-        "php": ">=5.6.0",
-        "silverstripe/recipe-plugin": "1.x-dev",
-        "silverstripe/recipe-cms": "4.4.1",
+        "php": ">=7.1.0",
+        "silverstripe/recipe-plugin": "^1.2",
         "silverstripe-themes/simple": "~3.2.0",
         "silverstripe/elemental-blocks": "dev-master",
         "qunabu/silverstripe-theme": "dev-master",
         "qunabu/silverstripe-qunabu-helpers": "4.0.x-dev",
         "silverstripe/tagfield": "^2.0@dev",
         "undefinedoffset/sortablegridfield": "^2.0@dev",
-        "bummzack/sortablefile": "^2.0"
-
-
+        "bummzack/sortablefile": "^2.0",
+        "silverstripe/admin": "1.5.0@stable",
+        "silverstripe/asset-admin": "1.5.0@stable",
+        "silverstripe/campaign-admin": "1.5.0@stable",
+        "silverstripe/cms": "4.5.0@stable",
+        "silverstripe/errorpage": "1.5.0@stable",
+        "silverstripe/graphql": "3.2.0@stable",
+        "silverstripe/recipe-core": "4.5.0@stable",
+        "silverstripe/reports": "4.5.0@stable",
+        "silverstripe/siteconfig": "4.5.0@stable",
+        "silverstripe/versioned": "1.5.0@stable",
+        "silverstripe/versioned-admin": "1.3.0@stable"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7"
     },
     "extra": {
         "project-files": [
-            "assets/*",
-            "mysite/_config/*",
-            ".env.example",
-            "favicon.ico"
+            "app/_config/*.yml",
+            "app/src/*"
         ],
-        "project-files-installed": [
-            "app/.htaccess",
-            "app/_config.php",
-            "app/_config/mysite.yml",
-            "app/src/Page.php",
-            "app/src/PageController.php"
+        "public-files": [
+            "public/*"
         ],
-        "public-files-installed": [
-            ".htaccess",
-            "index.php",
-            "install-frameworkmissing.html",
-            "install.php",
-            "web.config"
-        ]
+        "project-dependencies-installed": {
+            "silverstripe/admin": "1.5.0@stable",
+            "silverstripe/asset-admin": "1.5.0@stable",
+            "silverstripe/campaign-admin": "1.5.0@stable",
+            "silverstripe/cms": "4.5.0@stable",
+            "silverstripe/errorpage": "1.5.0@stable",
+            "silverstripe/graphql": "3.2.0@stable",
+            "silverstripe/recipe-core": "4.5.0@stable",
+            "silverstripe/recipe-plugin": "^1.2",
+            "silverstripe/reports": "4.5.0@stable",
+            "silverstripe/siteconfig": "4.5.0@stable",
+            "silverstripe/versioned": "1.5.0@stable",
+            "silverstripe/versioned-admin": "1.3.0@stable"
+        }
     },
     "config": {
         "process-timeout": 600
@@ -48,5 +58,8 @@
         "post-create-project-cmd": [
             "php post-install.php"
         ]
+    },
+    "provide": {
+        "silverstripe/recipe-cms": "4.5.0"
     }
 }
