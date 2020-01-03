@@ -9,6 +9,7 @@ services:
     volumes:
       - .:/var/www/html
     environment:
+      APACHE_DOCUMENT_ROOT: public/
       PHP_EXTENSION_XDEBUG: 1
       PHP_INI_ERROR_REPORTING: E_ALL
       PHP_INI_XDEBUG__REMOTE_PORT: 3000
